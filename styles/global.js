@@ -5,8 +5,8 @@ export const GlobalStyles = createGlobalStyle`
 	:root {
 		--colour-white: ${theme.colours.white};
 		--colour-black: ${theme.colours.black};
-		--colour-system-white-50: ${theme.colours.systemWhite.grey50};
-		--colour-system-black-50: ${theme.colours.systemBlack.grey50};
+		--colour-yellow: ${theme.colours.yellow};
+		--colour-blue: ${theme.colours.blue};
 		--font-default: ${theme.fonts.default};
 		--transition-speed-default: ${theme.transitionSpeed.default};
 		--transition-speed-fast: ${theme.transitionSpeed.fast};
@@ -29,16 +29,18 @@ export const GlobalStyles = createGlobalStyle`
 		border-radius: 0;
 		box-shadow: none;
 		font-weight: 100;
+		font-family: "Courier New", Courier;
+		line-height: normal;
 	}
 
 	::selection {
-		background-color: red;
-		color: black;
+		background-color: var(--colour-yellow);
+		color: var(--colour-blue);
 	}
 
 	html {
 		scroll-behavior: smooth;
-		background: ${theme.colours.white};
+		background: ${theme.colours.blue};
 		font-size: 16px;
 
 		&.no-scroll {
@@ -60,9 +62,7 @@ export const GlobalStyles = createGlobalStyle`
 	button,
 	label,
 	body {
-		font-family: var(--font-default);
-		color: var(--colour-black);
-		line-height: 1.4;
+		color: var(--colour-yellow);
 	}
 
 	strong,
@@ -76,7 +76,7 @@ export const GlobalStyles = createGlobalStyle`
 
 	a {
 		text-decoration: underline;
-		color: var(--colour-black);
+		color: var(--colour-yellow);
 		transition: all var(--transition-speed-default) var(--transition-ease);
 	}
 
@@ -87,7 +87,6 @@ export const GlobalStyles = createGlobalStyle`
 	h1,
 	.type-h1 {
 		font-size: ${theme.size.h1};
-		line-height: 2.813rem;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait}
 		{
@@ -97,14 +96,12 @@ export const GlobalStyles = createGlobalStyle`
 		@media ${theme.mediaBreakpoints.mobile}
 		{
 			font-size: ${theme.sizeMobile.h1};
-			line-height: 2.125rem;
 		}
 	}
 
 	h2,
 	.type-h2 {
 		font-size: ${theme.size.h2};
-		line-height: 2.25rem;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait}
 		{
@@ -114,14 +111,12 @@ export const GlobalStyles = createGlobalStyle`
 		@media ${theme.mediaBreakpoints.mobile}
 		{
 			font-size: ${theme.sizeMobile.h2};
-			line-height: 1.75rem;
 		}
 	}
 
 	h3,
 	.type-h3 {
 		font-size: ${theme.size.h3};
-		line-height: 1.938rem;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait}
 		{
@@ -131,14 +126,12 @@ export const GlobalStyles = createGlobalStyle`
 		@media ${theme.mediaBreakpoints.mobile}
 		{
 			font-size: ${theme.sizeMobile.h3};
-			line-height: 1.563rem;
 		}
 	}
 
 	h4,
 	.type-h4 {
 		font-size: ${theme.size.h4};
-		line-height: 1.563rem;
 
 		@media ${theme.mediaBreakpoints.tabletPortrait}
 		{
@@ -148,7 +141,6 @@ export const GlobalStyles = createGlobalStyle`
 		@media ${theme.mediaBreakpoints.mobile}
 		{
 			font-size: ${theme.sizeMobile.h4};
-			line-height: 1.375rem;
 		}
 	}
 
@@ -158,12 +150,10 @@ export const GlobalStyles = createGlobalStyle`
 	button,
 	div {
 		font-size: ${theme.size.body};
-		line-height: 1.938rem;
 
 		@media ${theme.mediaBreakpoints.mobile}
 		{
 			font-size: ${theme.sizeMobile.body};
-			line-height: 1.75rem;
 		}
 	}
 
