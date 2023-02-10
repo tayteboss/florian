@@ -6,7 +6,6 @@ import Menu from './Menu';
 
 const Main = styled.main`
 	padding-top: var(--header-h);
-	min-height: 100vh;
 `;
 
 const Layout = ({ children }) => {

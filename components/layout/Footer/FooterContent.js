@@ -4,7 +4,7 @@ import RichText from '../../common/RichText';
 
 const FooterContentWrapper = styled(motion.div)`
 	grid-column: span 3;
-	color: var(--colour-blue) !important;
+	color: var(--colour-blue);
 	margin-top: auto;
 
 	@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
@@ -15,12 +15,12 @@ const FooterContentWrapper = styled(motion.div)`
 
 	a,
 	p {
-		color: var(--colour-blue) !important;
+		color: var(--colour-blue);
 	}
 `;
 
 const Link = styled.a`
-	color: var(--colour-blue) !important;
+	color: var(--colour-blue);
 `;
 
 const wrapperVariants = {
@@ -43,20 +43,22 @@ const wrapperVariants = {
 };
 
 const FooterContent = ({ content, link, inView, className }) => (
-	<FooterContentWrapper
-		variants={wrapperVariants}
-		initial="hidden"
-		animate={inView ? 'visible' : 'hidden'}
-		className={className}
-	>
-		{link ? (
-			<Link href={link} target="_blank">
+	content && (
+		<FooterContentWrapper
+			variants={wrapperVariants}
+			initial="hidden"
+			animate={inView ? 'visible' : 'hidden'}
+			className={className}
+		>
+			{link ? (
+				<Link href={link} target="_blank">
+					<RichText data={content} />
+				</Link>
+			) : (
 				<RichText data={content} />
-			</Link>
-		) : (
-			<RichText data={content} />
-		)}
-	</FooterContentWrapper>
+			)}
+		</FooterContentWrapper>
+	)
 );
 
 export default FooterContent;

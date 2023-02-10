@@ -1,24 +1,36 @@
-import Head from 'next/head';
-import { renderMetaTags } from 'react-datocms';
+import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
-import { getPage, getSiteData } from '../lib/datocms';
-import Artichoke from '../components/Svgs/Artichoke';
+import Facade from '../components/blocks/Facade';
+import HomeInfo from '../components/blocks/HomeInfo';
+import { getHomePage, getSiteData } from '../lib/datocms';
 
 const PageWrapper = styled.div``;
 
 const Page = ({ data, siteData }) => {
 	return (
 		<PageWrapper>
-			{/* <Head>{renderMetaTags(data.seo)}</Head> */}
-			Home
+			<NextSeo
+				title={data?.seoTitle || 'Florian'}
+				description={siteData?.seoDescription}
+				openGraph={{
+					images: [
+						{
+							url: siteData?.seoImage?.url,
+							width: 1200,
+							height: 627,
+						},
+					],
+				}}
+			/>
+			<Facade />
+			<HomeInfo options={siteData} />
 		</PageWrapper>
 	);
 };
 
 export async function getStaticProps({ params }) {
-	// const data = await getPage('home');
+	const data = await getHomePage();
 	const siteData = await getSiteData();
-	const data = false;
 
 	return {
 		props: {

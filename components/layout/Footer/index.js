@@ -1,8 +1,11 @@
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 import styled from 'styled-components';
 import { useInView } from 'react-intersection-observer';
 import FooterDeco from './FooterDeco';
 import FooterInformation from './FooterInformation';
 import FooterSecondary from './FooterSecondary';
+import useViewportWidth from '../../../hooks/useViewportWidth';
 
 const options = require('../../../json/siteData.json');
 
@@ -15,6 +18,23 @@ const FooterMainWrapper = styled.div`
 `;
 
 const Footer = () => {
+	const [showFooter, setShowFooter] = useState(true);
+
+	const router = useRouter();
+	const viewportWidth = useViewportWidth();
+
+	useEffect(() => {
+		if (router.pathname === '/') {
+			if (viewportWidth === 'tabletPortrait' || viewportWidth === 'mobile') {
+				setShowFooter(true);
+			} else {
+				setShowFooter(false);
+			}
+		} else {
+			setShowFooter(true);
+		}
+	}, [router, viewportWidth]);
+
 	const { ref, inView } = useInView({
 		triggerOnce: true,
 		threshold: 0.2,
@@ -22,13 +42,15 @@ const Footer = () => {
 	});
 
 	return (
-		<FooterWrapper ref={ref}>
-			<FooterMainWrapper>
-				<FooterDeco options={options} inView={inView} />
-				<FooterInformation options={options} inView={inView} />
-			</FooterMainWrapper>
-			<FooterSecondary options={options} />
-		</FooterWrapper>
+		showFooter && (
+			<FooterWrapper ref={ref}>
+				<FooterMainWrapper>
+					<FooterDeco options={options} inView={inView} />
+					<FooterInformation options={options} inView={inView} />
+				</FooterMainWrapper>
+				<FooterSecondary options={options} />
+			</FooterWrapper>
+		)
 	);
 };
 

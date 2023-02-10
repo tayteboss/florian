@@ -41,15 +41,17 @@ const wrapperVariants = {
 };
 
 const FooterSocials = ({ title, link, inView }) => (
-	<FooterSocialsWrapper
-		variants={wrapperVariants}
-		initial="hidden"
-		animate={inView ? 'visible' : 'hidden'}
-	>
-		<Link href={link} target="_blank">
-			{title && title}
-		</Link>
-	</FooterSocialsWrapper>
+	link && (
+		<FooterSocialsWrapper
+			variants={wrapperVariants}
+			initial="hidden"
+			animate={inView ? 'visible' : 'hidden'}
+		>
+			<Link href={link} target="_blank">
+				{title && title}
+			</Link>
+		</FooterSocialsWrapper>
+	)
 );
 
 export default FooterSocials;
