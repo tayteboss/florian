@@ -13,40 +13,35 @@ const ContentWrapper = styled.section`
 	margin: 0 auto;
 `;
 
-const Page = ({ pageTransitionVariants, data, siteData }) => {
-	console.log('siteData', siteData);
-	console.log('data', data);
-
-	return (
-		<PageWrapper
-			variants={pageTransitionVariants}
-			initial="hidden"
-			animate="visible"
-			exit="hidden"
-		>
-			<NextSeo
-				title={data?.seoTitle || 'Florian'}
-				description={siteData?.seoDescription}
-				openGraph={{
-					images: [
-						{
-							url: siteData?.seoImage?.url,
-							width: 1200,
-							height: 627,
-						},
-					],
-				}}
-			/>
-			{data?.pageContent && (
-				<LayoutWrapper>
-					<ContentWrapper className="content">
-						<RichText data={data.pageContent} />
-					</ContentWrapper>
-				</LayoutWrapper>
-			)}
-		</PageWrapper>
-	);
-};
+const Page = ({ pageTransitionVariants, data, siteData }) => (
+	<PageWrapper
+		variants={pageTransitionVariants}
+		initial="hidden"
+		animate="visible"
+		exit="hidden"
+	>
+		<NextSeo
+			title={data?.seoTitle || 'Florian'}
+			description={siteData?.seoDescription}
+			openGraph={{
+				images: [
+					{
+						url: siteData?.seoImage?.url,
+						width: 1200,
+						height: 627,
+					},
+				],
+			}}
+		/>
+		{data?.pageContent && (
+			<LayoutWrapper>
+				<ContentWrapper className="content">
+					<RichText data={data.pageContent} />
+				</ContentWrapper>
+			</LayoutWrapper>
+		)}
+	</PageWrapper>
+);
 
 export const getStaticPaths = async () => {
 	const allPages = await getAllPages();
