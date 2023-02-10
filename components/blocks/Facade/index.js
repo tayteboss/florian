@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import styled from 'styled-components';
 import { Canvas, useFrame, useLoader } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
@@ -8,17 +9,6 @@ const FacadeWrapper = styled.section`
 	height: calc(calc(var(--vh) * 100) - var(--header-h));
 	position: relative;
 `;
-
-// const FacadeImg = styled.img`
-// 	position: absolute;
-// 	top: 40%;
-// 	left: 50%;
-// 	transform: translate(-50%, -50%);
-
-// 	@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
-// 		top: 50%;
-// 	}
-// `;
 
 const Model = ({ url }) => {
 	const gltf = useLoader(GLTFLoader, url);
@@ -59,7 +49,7 @@ const HTMLContent = ({ modelPath }) => {
 const Facade = () => (
 	<FacadeWrapper>
 		<Canvas
-			concurrent
+			concurrent="true"
 			colormanagement="true"
 			camera={{ position: [1.6, 0, 0], fov: 70 }}
 		>

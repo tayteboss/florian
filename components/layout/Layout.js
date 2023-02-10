@@ -8,8 +8,10 @@ const Main = styled.main`
 	padding-top: var(--header-h);
 `;
 
-const Layout = ({ children }) => {
+const Layout = ({ children, hasVisited }) => {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
+
+	console.log('hasVisited', hasVisited);
 
 	useEffect(() => {
 		const html = document.querySelector('html');
@@ -26,6 +28,7 @@ const Layout = ({ children }) => {
 			<Header
 				handleMenuOpenClose={() => setMenuIsOpen(!menuIsOpen)}
 				menuIsOpen={menuIsOpen}
+				hasVisited={hasVisited}
 			/>
 			<Menu isOpen={menuIsOpen} />
 			<Main>{children}</Main>

@@ -34,7 +34,7 @@ function App({ Component, pageProps }) {
 		if (hasCookies) {
 			setHasVisited(true);
 		} else {
-			setHasVisited(true);
+			Cookies.set('visited', 'true', { expires: 1, path: '' });
 		}
 	}, []);
 
@@ -42,7 +42,7 @@ function App({ Component, pageProps }) {
 		<>
 			<GlobalStyles />
 			<ThemeProvider theme={theme}>
-				<Layout>
+				<Layout hasVisited={hasVisited}>
 					<AnimatePresence
 						mode="wait"
 						onExitComplete={() => handleExitComplete()}

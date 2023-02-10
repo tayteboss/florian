@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import LayoutWrapper from '../common/LayoutWrapper';
+import AnnouncementBanner from '../elements/AnnouncementBanner';
 import HeaderLogo from '../elements/HeaderLogo';
 import HeaderMenuButton from '../elements/HeaderMenuButton';
+
+let options = require('../../json/siteData.json');
 
 const HeaderWrapper = styled.header`
 	position: fixed;
@@ -20,6 +23,7 @@ const HeaderInner = styled.div`
 
 const Header = ({ handleMenuOpenClose, menuIsOpen }) => (
 	<HeaderWrapper className="header">
+		<AnnouncementBanner options={options?.siteInformation} />
 		<LayoutWrapper>
 			<HeaderInner>
 				<HeaderLogo menuIsOpen={menuIsOpen} />
