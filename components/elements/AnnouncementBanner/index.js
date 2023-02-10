@@ -19,6 +19,11 @@ const AnnouncementBannerInner = styled.div`
 	margin: 0 auto;
 	padding: 16px 64px;
 
+	@media ${(props) => props.theme.mediaBreakpoints.mobile} {
+		text-align: left;
+		padding: 16px 32px 16px 16px;
+	}
+
 	p,
 	a {
 		color: var(--colour-blue) !important;
@@ -62,7 +67,6 @@ const wrapperVariants = {
 
 const AnnouncementBanner = ({ options }) => {
 	const [closeAnnouncement, setCloseAnnouncement] = useState(false);
-	console.log('options', options);
 
 	return (
 		<AnimatePresence>

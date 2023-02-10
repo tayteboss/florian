@@ -33,8 +33,6 @@ function App({ Component, pageProps }) {
 
 		if (hasCookies) {
 			setHasVisited(true);
-		} else {
-			Cookies.set('visited', 'true', { expires: 1, path: '' });
 		}
 	}, []);
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import AcknowledgmentModal from '../elements/AcknowledgmentModal';
 import Footer from './Footer';
 import Header from './Header';
 import Menu from './Menu';
@@ -10,8 +11,6 @@ const Main = styled.main`
 
 const Layout = ({ children, hasVisited }) => {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-	console.log('hasVisited', hasVisited);
 
 	useEffect(() => {
 		const html = document.querySelector('html');
@@ -28,9 +27,9 @@ const Layout = ({ children, hasVisited }) => {
 			<Header
 				handleMenuOpenClose={() => setMenuIsOpen(!menuIsOpen)}
 				menuIsOpen={menuIsOpen}
-				hasVisited={hasVisited}
 			/>
 			<Menu isOpen={menuIsOpen} />
+			<AcknowledgmentModal hasVisited={hasVisited} />
 			<Main>{children}</Main>
 			<Footer />
 		</>

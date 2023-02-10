@@ -4,7 +4,7 @@ import AnnouncementBanner from '../elements/AnnouncementBanner';
 import HeaderLogo from '../elements/HeaderLogo';
 import HeaderMenuButton from '../elements/HeaderMenuButton';
 
-let options = require('../../json/siteData.json');
+const options = require('../../json/siteData.json');
 
 const HeaderWrapper = styled.header`
 	position: fixed;
