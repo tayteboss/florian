@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { renderMetaTags } from 'react-datocms';
 import styled from 'styled-components';
 import { getPage, getSiteData } from '../lib/datocms';
+import Artichoke from '../components/Svgs/Artichoke';
 
 const PageWrapper = styled.div``;
 
