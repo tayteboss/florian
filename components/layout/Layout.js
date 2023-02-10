@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import Header from './Header';
 import Footer from './Footer';
+import Header from './Header';
 import Menu from './Menu';
-
-const options = require('../../json/siteData.json');
 
 const Main = styled.main`
 	padding-top: var(--header-h);
+	min-height: 100vh;
 `;
 
 const Layout = ({ children }) => {

@@ -144,6 +144,10 @@ export const GlobalStyles = createGlobalStyle`
 		}
 	}
 
+	.type-small {
+		font-size: ${theme.size.small};
+	}
+
 	p,
 	.type-p,
 	a,
