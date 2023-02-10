@@ -17,7 +17,7 @@ const Layout = ({ children, hasVisited }) => {
 
 		if (menuIsOpen) {
 			html.classList.add('no-scroll');
-		} else  {
+		} else {
 			html.classList.remove('no-scroll');
 		}
 	}, [menuIsOpen]);

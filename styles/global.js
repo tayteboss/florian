@@ -161,6 +161,44 @@ export const GlobalStyles = createGlobalStyle`
 		}
 	}
 
+	.content {
+		h1,
+		h2,
+		h3,
+		h4,
+		p {
+			margin-bottom: 32px;
+		}
+
+		ul,
+		ol
+		{
+			padding-left: 1.25rem;
+			font-size: ${theme.size.body};
+
+			li
+			{
+				list-style: disc;
+				line-height: 1.5;
+
+				&:not(:last-child)
+				{
+					margin-bottom: 0.125rem;
+				}
+			}
+		}
+
+		ol
+		{
+			padding-left: 1.95rem;
+
+			li
+			{
+				list-style: decimal;
+			}
+		}
+	}
+
 	.view-element-fade-in
 	{
 		opacity: 0;

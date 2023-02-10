@@ -27,6 +27,7 @@ const AnnouncementBannerInner = styled.div`
 	p,
 	a {
 		color: var(--colour-blue) !important;
+		margin-bottom: 0 !important;
 	}
 `;
 

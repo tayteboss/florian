@@ -1,40 +1,71 @@
 import styled from 'styled-components';
-import Head from 'next/head';
-import { renderMetaTags } from 'react-datocms';
+import { NextSeo } from 'next-seo';
 import { motion } from 'framer-motion';
-import { getAllPages, getPage } from '../lib/datocms';
+import { getAllPages, getPage, getSiteData } from '../lib/datocms';
+import RichText from '../components/common/RichText';
+import LayoutWrapper from '../components/common/LayoutWrapper';
 
 const PageWrapper = styled(motion.div)``;
 
-const Page = ({ pageTransitionVariants, data }) => (
-	<PageWrapper
-		variants={pageTransitionVariants}
-		initial="hidden"
-		animate="visible"
-		exit="hidden"
-	>
-		<Head>{renderMetaTags(data.seo)}</Head>
-	</PageWrapper>
-);
+const ContentWrapper = styled.section`
+	padding: 80px 0 180px;
+	max-width: 750px;
+	margin: 0 auto;
+`;
 
-// export const getStaticPaths = async () => {
-// 	const allPages = await getAllPages();
+const Page = ({ pageTransitionVariants, data, siteData }) => {
+	console.log('siteData', siteData);
+	console.log('data', data);
 
-// 	return {
-// 		paths: allPages.allPages?.map((page) => `/${page.pageSlug}`) || [],
-// 		fallback: false,
-// 	};
-// };
+	return (
+		<PageWrapper
+			variants={pageTransitionVariants}
+			initial="hidden"
+			animate="visible"
+			exit="hidden"
+		>
+			<NextSeo
+				title={data?.seoTitle || 'Florian'}
+				description={siteData?.seoDescription}
+				openGraph={{
+					images: [
+						{
+							url: siteData?.seoImage?.url,
+							width: 1200,
+							height: 627,
+						},
+					],
+				}}
+			/>
+			{data?.pageContent && (
+				<LayoutWrapper>
+					<ContentWrapper className="content">
+						<RichText data={data.pageContent} />
+					</ContentWrapper>
+				</LayoutWrapper>
+			)}
+		</PageWrapper>
+	);
+};
+
+export const getStaticPaths = async () => {
+	const allPages = await getAllPages();
+
+	return {
+		paths: allPages.allPages?.map((page) => `/${page.slug}`) || [],
+		fallback: false,
+	};
+};
 
 export const getStaticProps = async ({ params, preview = false }) => {
-	// const data = await getPage(params.slug, preview);
-	const data = false;
-
+	const data = await getPage(params.slug[0], preview);
+	const siteData = await getSiteData();
 
 	return {
 		props: {
 			preview,
 			data,
+			siteData,
 		},
 	};
 };
