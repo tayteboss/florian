@@ -1,5 +1,6 @@
 import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
+import Forms from '../../components/blocks/Form';
 import FormContent from '../../components/blocks/FormContent';
 import PageHeader from '../../components/blocks/PageHeader';
 import { getCateringPage, getSiteData } from '../../lib/datocms';
@@ -30,6 +31,7 @@ const Page = ({ data, siteData }) => {
 				linkTitle={data?.cateringPdfButtonTitle}
 				link={data?.cateringPdfFile}
 			/>
+			<Forms />
 		</PageWrapper>
 	);
 };

@@ -19,6 +19,7 @@
     "crypto": "^1.0.1",
     "dotenv": "^10.0.0",
     "drei": "^2.2.21",
+    "formik": "^2.2.9",
     "framer-motion": "^8.4.6",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",
@@ -37,7 +38,8 @@
     "react-three-fiber": "^6.0.13",
     "sass": "^1.56.1",
     "styled-components": "^5.3.3",
-    "three": "^0.149.0"
+    "three": "^0.149.0",
+    "yup": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.19.1",

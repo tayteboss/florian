@@ -199,6 +199,21 @@ export const GlobalStyles = createGlobalStyle`
 		}
 	}
 
+	.primary-button {
+	background: var(--colour-yellow);
+	color: var(--colour-blue);
+	border: 1px solid var(--colour-yellow);
+	padding: 6px 16px;
+	border-radius: 100px;
+
+	transition: all var(--transition-speed-default) var(--transition-ease);
+
+	&:hover {
+		background: var(--colour-blue);
+		color: var(--colour-yellow);
+	}
+	}
+
 	.view-element-fade-in
 	{
 		opacity: 0;
@@ -245,7 +260,7 @@ export const GlobalStyles = createGlobalStyle`
 
 	::placeholder {
 		color: currentcolor;
-		opacity: 1;
+		opacity: 0.7;
 	}
 
 	input[type="search"]::-webkit-search-decoration,
@@ -266,6 +281,7 @@ export const GlobalStyles = createGlobalStyle`
 		font-size: ${theme.size.body};
 		width: 100%;
 		appearance: none;
+		resize: none;
 	}
 
 	input::placeholder,
