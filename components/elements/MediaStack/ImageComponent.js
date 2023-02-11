@@ -5,18 +5,22 @@ const ImageComponentWrapper = styled.div`
 	position: relative;
 	height: 100%;
 	width: 100%;
-	background-color: var(--colour-system-white-grey-700);
+	background-color: var(--colour-blue);
 `;
 
-const ImageComponent = ({ data }) => (
+const ImageComponent = ({ data, useNativeDimensions }) => (
 	<ImageComponentWrapper className="image-component-wrapper">
-		<Image
-			src={data.url}
-			width={data.width}
-			height={data.height}
-			layout="responsive"
-			objectFit="cover"
-		/>
+		{useNativeDimensions ? (
+			<Image
+				src={data.url}
+				width={data.width}
+				height={data.height}
+				layout="responsive"
+				objectFit="cover"
+			/>
+		) : (
+			<Image src={data.url} layout="fill" objectFit="cover" />
+		)}
 	</ImageComponentWrapper>
 );
 

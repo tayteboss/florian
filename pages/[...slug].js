@@ -5,7 +5,9 @@ import { getAllPages, getPage, getSiteData } from '../lib/datocms';
 import RichText from '../components/common/RichText';
 import LayoutWrapper from '../components/common/LayoutWrapper';
 
-const PageWrapper = styled(motion.div)``;
+const PageWrapper = styled(motion.div)`
+	padding-top: var(--header-h);
+`;
 
 const ContentWrapper = styled.section`
 	padding: 80px 0 180px;

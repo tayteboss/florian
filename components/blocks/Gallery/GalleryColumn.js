@@ -51,7 +51,7 @@ const GalleryColumn = ({ data, yScroll, docHeight, removeOnMobile }) => {
 		>
 			<GalleryColumnInner style={{ y: yScroll }}>
 				{shuffledData.map((item, index) => (
-					<MediaStack data={item} key={index} />
+					<MediaStack data={item} key={index} useNativeDimensions />
 				))}
 			</GalleryColumnInner>
 		</GalleryColumnWrapper>

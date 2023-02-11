@@ -4,7 +4,9 @@ import LayoutWrapper from '../components/common/LayoutWrapper';
 import PrimaryLink from '../components/elements/PrimaryLink';
 import pxToRem from '../utils/pxToRem';
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`
+	padding-top: var(--header-h);
+`;
 
 const PageInner = styled.div`
 	padding: 80px 0 360px;

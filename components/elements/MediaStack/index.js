@@ -7,7 +7,7 @@ const MediaStackWrapper = styled.div`
 	overflow: hidden;
 `;
 
-const MediaStack = ({ data }) => {
+const MediaStack = ({ data, useNativeDimensions }) => {
 	const useVideo = data?.useVideo && data?.video?.url;
 	const useImage = !data?.useVideo && data?.image;
 
@@ -20,7 +20,12 @@ const MediaStack = ({ data }) => {
 	return (
 		<MediaStackWrapper ref={ref} className="media-stack">
 			{useVideo && <VideoComponent data={data.video} inView={inView} />}
-			{useImage && <ImageComponent data={data.image} />}
+			{useImage && (
+				<ImageComponent
+					data={data.image}
+					useNativeDimensions={useNativeDimensions}
+				/>
+			)}
 		</MediaStackWrapper>
 	);
 };

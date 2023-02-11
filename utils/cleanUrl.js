@@ -1,4 +1,9 @@
 const cleanUrl = (link) => {
+	console.log('link', link);
+
+	if (link?.url) {
+		return link.url;
+	}
 	if (link?.internalLink?.slug) {
 		if (link.internalLink.slug === 'home') {
 			return '/';

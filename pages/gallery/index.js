@@ -3,7 +3,9 @@ import styled from 'styled-components';
 import Gallery from '../../components/blocks/Gallery';
 import { getGalleryPage, getSiteData } from '../../lib/datocms';
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`
+	padding-top: var(--header-h);
+`;
 
 const Page = ({ data, siteData }) => (
 	<PageWrapper>

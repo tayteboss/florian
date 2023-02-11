@@ -5,9 +5,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Menu from './Menu';
 
-const Main = styled.main`
-	padding-top: var(--header-h);
-`;
+const Main = styled.main``;
 
 const Layout = ({ children, hasVisited }) => {
 	const [menuIsOpen, setMenuIsOpen] = useState(false);
