@@ -1,6 +1,4 @@
 const cleanUrl = (link) => {
-	console.log('link', link);
-
 	if (link?.url) {
 		return link.url;
 	}

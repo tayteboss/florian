@@ -23,7 +23,7 @@ const PrimaryButton = ({ title, handleMenuOpenClose, isDarkTheme }) => (
 	<PrimaryButtonWrapper
 		onClick={() => handleMenuOpenClose()}
 		$isDarkTheme={isDarkTheme}
-		className="primary-button"
+		className={`primary-button${isDarkTheme ? '--dark' : ''}`}
 	>
 		{title || title}
 	</PrimaryButtonWrapper>

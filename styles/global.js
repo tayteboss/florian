@@ -208,6 +208,17 @@ export const GlobalStyles = createGlobalStyle`
 
 	transition: all var(--transition-speed-default) var(--transition-ease);
 
+	&--dark {
+		background: var(--colour-blue);
+		color: var(--colour-yellow);
+		border: 1px solid var(--colour-blue);
+
+		&:hover {
+			background: var(--colour-yellow);
+			color: var(--colour-blue);
+		}
+	}
+
 	&:hover {
 		background: var(--colour-blue);
 		color: var(--colour-yellow);

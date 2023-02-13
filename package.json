@@ -11,8 +11,10 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@react-email/render": "^0.0.6",
     "@react-three/drei": "^9.56.21",
     "@react-three/fiber": "^8.11.0",
+    "@sendgrid/mail": "^7.7.0",
     "@styled-jsx/plugin-sass": "^4.0.2",
     "babel-plugin-styled-components": "^2.0.5",
     "base-64": "^1.0.0",
