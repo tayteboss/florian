@@ -11,6 +11,7 @@ import { GlobalStyles } from '../styles/global';
 import use1vh from '../hooks/use1vh';
 import useHeaderHeight from '../hooks/useHeaderHeight';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 const pageTransitionVariants = {
 	hidden: { opacity: 0, transition: { duration: 0.3 } },
@@ -50,6 +51,17 @@ function App({ Component, pageProps }) {
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
 			</Head>
+			<NextSeo
+				openGraph={{
+					images: [
+						{
+							url: '/florian-og.jpg',
+							width: 1200,
+							height: 627,
+						},
+					],
+				}}
+			/>
 			<ThemeProvider theme={theme}>
 				<Layout hasVisited={hasVisited}>
 					<AnimatePresence

@@ -7,7 +7,7 @@ const MediaStackWrapper = styled.div`
 	overflow: hidden;
 `;
 
-const MediaStack = ({ data, useNativeDimensions }) => {
+const MediaStack = ({ data, useNativeDimensions, isPriority }) => {
 	const useVideo = data?.useVideo && data?.video?.url;
 	const useImage = !data?.useVideo && data?.image;
 
@@ -18,12 +18,18 @@ const MediaStack = ({ data, useNativeDimensions }) => {
 	});
 
 	return (
-		<MediaStackWrapper ref={ref} className="media-stack">
+		<MediaStackWrapper
+			ref={ref}
+			className={`media-stack view-element-fade-in ${
+				inView ? 'view-element-fade-in--in-view' : ''
+			}`}
+		>
 			{useVideo && <VideoComponent data={data.video} inView={inView} />}
 			{useImage && (
 				<ImageComponent
 					data={data.image}
 					useNativeDimensions={useNativeDimensions}
+					isPriority={isPriority}
 				/>
 			)}
 		</MediaStackWrapper>

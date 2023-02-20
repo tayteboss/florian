@@ -8,7 +8,7 @@ const ImageComponentWrapper = styled.div`
 	background-color: var(--colour-blue);
 `;
 
-const ImageComponent = ({ data, useNativeDimensions }) => (
+const ImageComponent = ({ data, useNativeDimensions, isPriority }) => (
 	<ImageComponentWrapper className="image-component-wrapper">
 		{useNativeDimensions ? (
 			<Image
@@ -17,6 +17,7 @@ const ImageComponent = ({ data, useNativeDimensions }) => (
 				height={data.height}
 				layout="responsive"
 				objectFit="cover"
+				priority={isPriority}
 			/>
 		) : (
 			<Image src={data.url} layout="fill" objectFit="cover" />

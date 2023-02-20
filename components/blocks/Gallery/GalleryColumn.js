@@ -7,7 +7,7 @@ const GalleryColumnWrapper = styled.div`
 	grid-column: span 4;
 
 	@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
-		display: ${(props) => props.$removeOnMobile ? 'none' : 'block'};
+		display: ${(props) => (props.$removeOnMobile ? 'none' : 'block')};
 		grid-column: 1 / -1;
 		padding: 0 16px;
 	}
@@ -15,6 +15,10 @@ const GalleryColumnWrapper = styled.div`
 	.media-stack {
 		&:not(:last-of-type) {
 			margin-bottom: ${pxToRem(16)};
+		}
+
+		.image-component-wrapper {
+			background: var(--colour-yellow);
 		}
 	}
 `;
@@ -51,7 +55,12 @@ const GalleryColumn = ({ data, yScroll, docHeight, removeOnMobile }) => {
 		>
 			<GalleryColumnInner style={{ y: yScroll }}>
 				{shuffledData.map((item, index) => (
-					<MediaStack data={item} key={index} useNativeDimensions />
+					<MediaStack
+						data={item}
+						key={index}
+						useNativeDimensions
+						isPriority={index === 0 || index === 1}
+					/>
 				))}
 			</GalleryColumnInner>
 		</GalleryColumnWrapper>
