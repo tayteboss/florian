@@ -16,10 +16,6 @@ const GalleryColumnWrapper = styled.div`
 		&:not(:last-of-type) {
 			margin-bottom: ${pxToRem(16)};
 		}
-
-		.image-component-wrapper {
-			background: var(--colour-yellow);
-		}
 	}
 `;
 
