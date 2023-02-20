@@ -3,13 +3,20 @@ import PrimaryButton from '../PrimaryButton';
 
 const HeaderMenuButtonWrapper = styled.div``;
 
+const Title = styled.p``;
+
 const HeaderMenuButton = ({ handleMenuOpenClose, menuIsOpen }) => (
 	<HeaderMenuButtonWrapper>
-		<PrimaryButton
-			title={!menuIsOpen ? 'Menu' : 'Close'}
-			handleMenuOpenClose={handleMenuOpenClose}
-			isDarkTheme={menuIsOpen}
-		/>
+		{true && (
+			<Title>New website coming soon...</Title>
+		)}
+		{false && (
+			<PrimaryButton
+				title={!menuIsOpen ? 'Menu' : 'Close'}
+				handleMenuOpenClose={handleMenuOpenClose}
+				isDarkTheme={menuIsOpen}
+			/>
+		)}
 	</HeaderMenuButtonWrapper>
 );
 

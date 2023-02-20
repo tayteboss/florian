@@ -23,7 +23,7 @@ const Page = ({ data, siteData }) => (
 				],
 			}}
 		/>
-		<Facade />
+		{false && <Facade />}
 		<HomeInfo options={siteData} />
 	</PageWrapper>
 );
