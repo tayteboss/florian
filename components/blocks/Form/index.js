@@ -6,11 +6,15 @@ import pxToRem from '../../../utils/pxToRem';
 
 const FormWrapper = styled.div`
 	max-width: 460px;
-	margin: 0 16px 180px;
+	margin: 0 auto 180px;
 	opacity: ${(props) => (props.$disableForm ? 0.3 : 1)};
 	pointer-events: ${(props) => (props.$disableForm ? 'none' : 'all')};
 
 	transition: all var(--transition-speed-default) var(--transition-ease);
+
+	@media ${(props) => props.theme.mediaBreakpoints.mobile} {
+		margin: 0 16px 180px;
+	}
 `;
 
 const FormInner = styled.ul`
