@@ -42,12 +42,14 @@ export const GlobalStyles = createGlobalStyle`
 		scroll-behavior: smooth;
 		background: ${theme.colours.blue};
 		font-size: 16px;
+		position: relative;
 
 		&.no-scroll {
 			overflow-y: hidden;
 			
 			body {
 				overflow-y: hidden;
+				position: relative;
 			}
 		}
 	}

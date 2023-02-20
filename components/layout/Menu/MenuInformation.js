@@ -9,7 +9,8 @@ import pxToRem from '../../../utils/pxToRem';
 
 const MenuInformationWrapper = styled(motion.div)`
 	background: var(--colour-yellow);
-	height: calc(var(--vh) * 40);
+	height: 40lvh;
+	height: 40vh;
 	padding-bottom: ${pxToRem(16)};
 	display: flex;
 	flex-direction: column;

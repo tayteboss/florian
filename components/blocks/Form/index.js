@@ -6,7 +6,7 @@ import pxToRem from '../../../utils/pxToRem';
 
 const FormWrapper = styled.div`
 	max-width: 460px;
-	margin: 0 auto 180px;
+	margin: 0 16px 180px;
 	opacity: ${(props) => (props.$disableForm ? 0.3 : 1)};
 	pointer-events: ${(props) => (props.$disableForm ? 'none' : 'all')};
 

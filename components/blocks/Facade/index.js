@@ -53,6 +53,16 @@ const ImageWrapper = styled.div`
 	transform: translate(-50%, -50%);
 	height: 75%;
 	overflow: hidden;
+
+	@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+		position: relative;
+		top: initial;
+		left: initial;
+		transform: translate(0);
+		height: 70vh;
+		height: 70svh;
+		margin-bottom: 70px;
+	}
 `;
 
 const Img = styled.img`

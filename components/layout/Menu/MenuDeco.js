@@ -20,7 +20,8 @@ import MenuSocials from './MenuSocials';
 import pxToRem from '../../../utils/pxToRem';
 
 const MenuDecoWrapper = styled(motion.div)`
-	height: calc(var(--vh) * 60);
+	height: 60lvh;
+	height: 60vh;
 	background: var(--colour-blue);
 	position: fixed;
 	bottom: 0;

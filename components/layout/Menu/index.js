@@ -10,10 +10,10 @@ const MenuWrapper = styled(motion.div)`
 	top: 0;
 	left: 0;
 	z-index: 90;
-	height: calc(var(--vh) * 100);
+	height: 100lvh;
+	height: 100vh;
 	width: 100%;
-	position: relative;
-	z-index: 1;
+	overflow-y: hidden;
 `;
 
 const wrapperVariants = {
@@ -41,6 +41,7 @@ const Menu = ({ isOpen }) => (
 				initial="hidden"
 				animate="visible"
 				exit="hidden"
+				className="performance"
 			>
 				<MenuInformation options={options} isOpen={isOpen} />
 				<MenuDeco options={options} isOpen={isOpen} />
