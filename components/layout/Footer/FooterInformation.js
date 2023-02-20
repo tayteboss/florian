@@ -19,6 +19,11 @@ const FooterInformationWrapper = styled.div`
 			grid-column: 1 / -1;
 		}
 	}
+
+	p,
+	a {
+		margin-bottom: 0 !important;
+	}
 `;
 
 const FooterInformation = ({ options, inView }) => (

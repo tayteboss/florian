@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import AcknowledgmentModal from '../elements/AcknowledgmentModal';
@@ -19,6 +20,16 @@ const Layout = ({ children, hasVisited }) => {
 			html.classList.remove('no-scroll');
 		}
 	}, [menuIsOpen]);
+
+	const router = useRouter();
+	const routerEvents = router.events;
+	useEffect(() => {
+		routerEvents.on('routeChangeComplete', () => setMenuIsOpen(false));
+
+		return () => {
+			routerEvents.off('routeChangeComplete', () => setMenuIsOpen(false));
+		};
+	}, [routerEvents]);
 
 	return (
 		<>

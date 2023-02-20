@@ -20,9 +20,9 @@ const someAPIRoute = async (req, res) => {
 	const parsedReqBody = JSON.parse(req.body);
 
 	const msg = {
-		to: 'catering@floriancarlton.com.au', // Change to your recipient
+		to: 'hello@floriancarlton.com.au', // Change to your recipient
 		from: 'hello@floriancarlton.com.au', // Change to your verified sender
-		subject: `Catering Enquiry - ${parsedReqBody.fullName} - ${parsedReqBody.email}`,
+		subject: `Contact Enquiry - ${parsedReqBody.fullName} - ${parsedReqBody.email}`,
 		text: parsedReqBody.message,
 	};
 

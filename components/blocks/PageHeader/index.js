@@ -8,7 +8,8 @@ const PageHeaderWrapper = styled(motion.section)`
 `;
 
 const MediaWrapper = styled.div`
-	.image-component-wrapper {
+	.image-component-wrapper,
+	.video-component-wrapper {
 		height: 70vh;
 	}
 `;

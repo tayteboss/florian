@@ -56,13 +56,19 @@ const SuccessMessage = styled.p`
 	margin-bottom: ${pxToRem(80)};
 `;
 
-const Forms = () => {
+const Forms = ({ isContactForm }) => {
 	const [formStatus, setFormStatus] = useState(false);
 
 	const handleSubmit = async (values) => {
 		setFormStatus('sending');
 
-		fetch('/api/submitCatering', {
+		let fetchUrl = '/api/submitCatering';
+
+		if (isContactForm) {
+			fetchUrl = '/api/submitContact';
+		}
+
+		fetch(fetchUrl, {
 			method: 'POST',
 			body: JSON.stringify(values),
 		})

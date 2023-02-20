@@ -13,6 +13,11 @@ const MenuContentWrapper = styled(motion.div)`
 		text-align: center;
 		color: var(--colour-yellow) !important;
 	}
+
+	p,
+	a {
+		margin-bottom: 0 !important;
+	}
 `;
 
 const Link = styled.a`

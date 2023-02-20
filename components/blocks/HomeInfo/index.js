@@ -24,6 +24,7 @@ const HomeInfoWrapper = styled.section`
 	a,
 	p {
 		color: var(--colour-yellow) !important;
+		margin-bottom: 0 !important;
 	}
 `;
 

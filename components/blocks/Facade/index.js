@@ -46,20 +46,44 @@ const HTMLContent = ({ modelPath }) => {
 	);
 };
 
+const ImageWrapper = styled.div`
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	height: 75%;
+	overflow: hidden;
+`;
+
+const Img = styled.img`
+	height: 100%;
+	width: 100%;
+	object-fit: contain;
+`;
+
 const Facade = () => (
-	<FacadeWrapper>
-		<Canvas
-			concurrent="true"
-			colormanagement="true"
-			camera={{ position: [1.6, 0, 0], fov: 70 }}
-		>
-			<Lights />
-			<Suspense fallback={null}>
-				<HTMLContent modelPath="/facade/gitf-box.gltf" />
-			</Suspense>
-			<OrbitControls />
-		</Canvas>
-	</FacadeWrapper>
+	<>
+		{true && (
+			<ImageWrapper>
+				<Img src="/icons/facade.svg" />
+			</ImageWrapper>
+		)}
+		{false && (
+			<FacadeWrapper>
+				<Canvas
+					concurrent="true"
+					colormanagement="true"
+					camera={{ position: [1.6, 0, 0], fov: 70 }}
+				>
+					<Lights />
+					<Suspense fallback={null}>
+						<HTMLContent modelPath="/facade/gitf-box.gltf" />
+					</Suspense>
+					<OrbitControls enableZoom={false} />
+				</Canvas>
+			</FacadeWrapper>
+		)}
+	</>
 );
 
 export default Facade;
