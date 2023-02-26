@@ -11,7 +11,7 @@ const PageWrapper = styled.div`
 const Page = ({ data, siteData }) => (
 	<PageWrapper>
 		<NextSeo
-			title={data?.seoTitle || 'Florian'}
+			title="Florian - Coming Soon"
 			description={siteData?.seoDescription}
 			openGraph={{
 				images: [
@@ -23,7 +23,7 @@ const Page = ({ data, siteData }) => (
 				],
 			}}
 		/>
-		{false && <Facade />}
+		<Facade />
 		<HomeInfo options={siteData} />
 	</PageWrapper>
 );

@@ -59,9 +59,10 @@ const ImageWrapper = styled.div`
 		top: initial;
 		left: initial;
 		transform: translate(0);
-		height: 70vh;
-		height: 70svh;
+		height: 60vh;
+		height: 60svh;
 		margin-bottom: 70px;
+		padding-top: 50px;
 	}
 `;
 
