@@ -12,6 +12,7 @@ import use1vh from '../hooks/use1vh';
 import useHeaderHeight from '../hooks/useHeaderHeight';
 import Head from 'next/head';
 import { NextSeo } from 'next-seo';
+import IntroCanvas from '../components/blocks/IntroCanvas';
 
 const pageTransitionVariants = {
 	hidden: { opacity: 0, transition: { duration: 0.3 } },
@@ -42,6 +43,7 @@ function App({ Component, pageProps }) {
 	return (
 		<>
 			<GlobalStyles />
+			<IntroCanvas />
 			<Head>
 				<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
