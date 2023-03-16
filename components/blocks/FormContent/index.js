@@ -39,7 +39,7 @@ const FormContent = ({ data, linkTitle, link }) => {
 			<FormContentWrapper className="performance form-content" ref={ref}>
 				<LayoutWrapper>
 					<FormContentInner
-						className={`view-element-fade-in content ${
+						className={`view-element-fade-in form-content__inner content ${
 							inView ? 'view-element-fade-in--in-view' : ''
 						}`}
 					>
