@@ -23,7 +23,7 @@ const MediaStack = ({ data }) => {
 	});
 
 	return (
-		<MediaStackWrapper ref={ref}>
+		<MediaStackWrapper ref={ref} className="media-stack">
 			{useVideo && <VideoComponent data={data.video} inView={inView} />}
 			{useImage && <ImageComponent data={data.image} />}
 			{useCaption && <Caption>{data.caption}</Caption>}
