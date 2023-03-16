@@ -1,6 +1,5 @@
 import { NextSeo } from 'next-seo';
 import styled from 'styled-components';
-import Facade from '../components/blocks/Facade';
 import HomeInfo from '../components/blocks/HomeInfo';
 import { getHomePage, getSiteData } from '../lib/datocms';
 
@@ -23,7 +22,6 @@ const Page = ({ data, siteData }) => (
 				],
 			}}
 		/>
-		<Facade />
 		<HomeInfo options={siteData} />
 	</PageWrapper>
 );

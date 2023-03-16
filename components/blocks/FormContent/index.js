@@ -36,7 +36,7 @@ const FormContent = ({ data, linkTitle, link }) => {
 
 	return (
 		data && (
-			<FormContentWrapper className="performance" ref={ref}>
+			<FormContentWrapper className="performance form-content" ref={ref}>
 				<LayoutWrapper>
 					<FormContentInner
 						className={`view-element-fade-in content ${
