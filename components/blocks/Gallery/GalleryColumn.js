@@ -23,25 +23,6 @@ const GalleryColumnInner = styled(motion.div)``;
 
 const GalleryColumn = ({ data, yScroll, docHeight, removeOnMobile }) => {
 	if (data.length <= 0) return;
-
-	const shuffle = (array) => {
-		let currentIndex = array.length;
-		let randomIndex;
-
-		while (currentIndex != 0) {
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex--;
-
-			[array[currentIndex], array[randomIndex]] = [
-				array[randomIndex],
-				array[currentIndex],
-			];
-		}
-
-		return array;
-	};
-
-	const shuffledData = shuffle(data);
 	const paddingTop = docHeight;
 
 	return (
@@ -50,7 +31,7 @@ const GalleryColumn = ({ data, yScroll, docHeight, removeOnMobile }) => {
 			$removeOnMobile={removeOnMobile}
 		>
 			<GalleryColumnInner style={{ y: yScroll }}>
-				{shuffledData.map((item, index) => (
+				{data.map((item, index) => (
 					<MediaStack
 						data={item}
 						key={index}

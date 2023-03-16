@@ -15,7 +15,7 @@ const GalleryWrapper = styled.section`
 	}
 `;
 
-const Gallery = ({ data }) => {
+const Gallery = ({ galleryColOne, galleryColTwo, galleryColThree }) => {
 	const [docHeight, setDocHeight] = useState(1000);
 
 	const { scrollY } = useScroll();
@@ -41,15 +41,19 @@ const Gallery = ({ data }) => {
 	return (
 		<GalleryWrapper>
 			<LayoutGrid>
-				<GalleryColumn data={data} yScroll={y1} docHeight={0} />
 				<GalleryColumn
-					data={data}
+					data={galleryColOne}
+					yScroll={y1}
+					docHeight={0}
+				/>
+				<GalleryColumn
+					data={galleryColTwo}
 					yScroll={y2}
 					docHeight={1000}
 					removeOnMobile
 				/>
 				<GalleryColumn
-					data={data}
+					data={galleryColThree}
 					yScroll={y3}
 					docHeight={2000}
 					removeOnMobile
