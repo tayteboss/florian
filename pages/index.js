@@ -6,13 +6,9 @@ import { getHomePage, getSiteData } from '../lib/datocms';
 import MediaStack from '../components/common/MediaStack';
 
 const PageWrapper = styled.div`
-	padding-top: var(--header-h);
-
 	.media-stack {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100lvh;
+		height: 90vh;
+		height: 90lvh;
 		width: 100%;
 		overflow: hidden;
 
