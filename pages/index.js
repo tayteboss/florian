@@ -7,10 +7,15 @@ import MediaStack from '../components/common/MediaStack';
 
 const PageWrapper = styled.div`
 	.media-stack {
-		height: 90vh;
-		height: 90lvh;
+		height: 100vh;
+		height: 100lvh;
 		width: 100%;
 		overflow: hidden;
+
+		@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+			height: 90vh;
+			height: 90lvh;
+		}
 
 		.image-component-wrapper {
 			padding-top: 0;
