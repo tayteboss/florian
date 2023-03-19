@@ -37,7 +37,7 @@ const Layout = ({ children, hasVisited }) => {
 				handleMenuOpenClose={() => setMenuIsOpen(!menuIsOpen)}
 				menuIsOpen={menuIsOpen}
 			/>
-			{false && <Menu isOpen={menuIsOpen} />}
+			<Menu isOpen={menuIsOpen} />
 			<AcknowledgmentModal hasVisited={hasVisited} />
 			<Main>{children}</Main>
 			<Footer />
