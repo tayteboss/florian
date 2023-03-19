@@ -21,7 +21,7 @@ const PageHeader = ({ data }) => {
 	return (
 		<PageHeaderWrapper style={{ y: y1 }} className="performance">
 			<MediaWrapper>
-				<MediaStack data={data} />
+				<MediaStack data={data} isPriority />
 			</MediaWrapper>
 		</PageHeaderWrapper>
 	);

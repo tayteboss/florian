@@ -23,7 +23,7 @@ const AcknowledgmentModalWrapper = styled(motion.div)`
 	justify-content: center;
 	align-items: center;
 	text-align: center;
-	row-gap: ${pxToRem(32)};
+	row-gap: ${pxToRem(8)};
 	width: 80%;
 	max-width: 800px;
 
@@ -64,7 +64,7 @@ const wrapperVariants = {
 		transition: {
 			duration: 0.3,
 			ease: 'easeInOut',
-			delay: 1,
+			delay: 2,
 		},
 	},
 };

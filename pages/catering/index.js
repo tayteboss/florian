@@ -5,34 +5,36 @@ import FormContent from '../../components/blocks/FormContent';
 import PageHeader from '../../components/blocks/PageHeader';
 import { getCateringPage, getSiteData } from '../../lib/datocms';
 
-const PageWrapper = styled.div``;
+const PageWrapper = styled.div`
+	.form-content__inner {
+		max-width: 700px;
+	}
+`;
 
-const Page = ({ data, siteData }) => {
-	return (
-		<PageWrapper>
-			<NextSeo
-				title={data?.seoTitle || 'Florian'}
-				description={siteData?.seoDescription}
-				openGraph={{
-					images: [
-						{
-							url: siteData?.seoImage?.url,
-							width: 1200,
-							height: 627,
-						},
-					],
-				}}
-			/>
-			<PageHeader data={data?.headerImage[0]} />
-			<FormContent
-				data={data?.formContent}
-				linkTitle={data?.cateringPdfButtonTitle}
-				link={data?.cateringPdfFile}
-			/>
-			<Forms />
-		</PageWrapper>
-	);
-};
+const Page = ({ data, siteData }) => (
+	<PageWrapper>
+		<NextSeo
+			title={data?.seoTitle || 'Florian'}
+			description={siteData?.seoDescription}
+			openGraph={{
+				images: [
+					{
+						url: siteData?.seoImage?.url,
+						width: 1200,
+						height: 627,
+					},
+				],
+			}}
+		/>
+		<PageHeader data={data?.headerImage[0]} />
+		<FormContent
+			data={data?.formContent}
+			linkTitle={data?.cateringPdfButtonTitle}
+			link={data?.cateringPdfFile}
+		/>
+		<Forms />
+	</PageWrapper>
+);
 
 export async function getStaticProps({ params }) {
 	const data = await getCateringPage();
