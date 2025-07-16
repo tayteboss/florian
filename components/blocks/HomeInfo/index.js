@@ -4,6 +4,7 @@ import LayoutWrapper from '../../common/LayoutWrapper';
 import LayoutGrid from '../../common/LayoutGrid';
 import FooterContent from '../../layout/Footer/FooterContent';
 import FooterSocials from '../../layout/Footer/FooterSocials';
+import FooterBooking from '../FooterBooking';
 
 const HomeInfoWrapper = styled.section`
 	position: fixed;
@@ -19,12 +20,6 @@ const HomeInfoWrapper = styled.section`
 
 	@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
 		display: none;
-	}
-
-	a,
-	p {
-		color: var(--colour-yellow) !important;
-		margin-bottom: 0 !important;
 	}
 `;
 
@@ -57,12 +52,13 @@ const HomeInfo = ({ options }) => {
 						delay="300ms"
 						className="end-home-content"
 					/>
-					<FooterSocials
+					{/* <FooterSocials
 						title="Instagram"
 						link={options?.instagramLink}
 						inView={inView}
 						delay="450ms"
-					/>
+					/> */}
+					<FooterBooking inView={inView} />
 				</LayoutGrid>
 			</LayoutWrapper>
 		</HomeInfoWrapper>

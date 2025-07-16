@@ -36,6 +36,10 @@ const MenuDecoWrapper = styled(motion.div)`
 		top: 100%;
 		left: 100%;
 
+		@media ${(props) => props.theme.mediaBreakpoints.mobile} {
+			filter: brightness(0.5);
+		}
+
 		path {
 			fill: var(--colour-yellow);
 		}
@@ -354,11 +358,19 @@ const MenuContentWrapper = styled.div`
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	row-gap: ${pxToRem(32)};
+	display: none;
+
+	@media ${(props) => props.theme.mediaBreakpoints.tabletMedium} {
+		display: flex;
+	}
+`;
+
+const Button = styled.a`
+	color: var(--colour-yellow);
 `;
 
 const wrapperVariants = {
@@ -860,6 +872,12 @@ const MenuDeco = ({ isOpen, options }) => (
 						delay="450ms"
 						onMobile
 					/>
+					<Button
+						href="https://bookings.obeeapp.com/florian?fbclid=PAZXh0bgNhZW0CMTEAAafB_8GmGWv_zgGop3Tcsbnk-dUNjf3dK3i4CGXZKuaPuray1OLd4xOgqxuNVA_aem_L7i6DSxPLqc0xUYRUjnGqw"
+						target="_blank"
+					>
+						Make a booking
+					</Button>
 				</MenuContentWrapper>
 			</MenuDecoWrapper>
 		)}

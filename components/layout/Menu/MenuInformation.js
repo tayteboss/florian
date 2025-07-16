@@ -6,6 +6,7 @@ import MenuList from './MenuList';
 import MenuContent from './MenuContent';
 import MenuSocials from './MenuSocials';
 import pxToRem from '../../../utils/pxToRem';
+import MenuBooking from '../../blocks/MenuBooking';
 
 const MenuInformationWrapper = styled(motion.div)`
 	background: var(--colour-yellow);
@@ -79,12 +80,7 @@ const MenuInformation = ({ options, isOpen }) => (
 							delay="300ms"
 							className="end-menu-content"
 						/>
-						<MenuSocials
-							title="Instagram"
-							link={options?.siteInformation?.instagramLink}
-							isOpen={isOpen}
-							delay="450ms"
-						/>
+						<MenuBooking isOpen={isOpen} />
 					</LayoutGrid>
 				</LayoutWrapper>
 			</MenuInformationWrapper>

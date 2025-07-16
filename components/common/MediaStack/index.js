@@ -5,6 +5,11 @@ import VideoComponent from './VideoComponent';
 
 const MediaStackWrapper = styled.div`
 	overflow: hidden;
+
+	img,
+	video {
+		filter: brightness(0.8);
+	}
 `;
 
 const Caption = styled.h3`
