@@ -37,6 +37,7 @@ const GalleryColumn = ({ data, yScroll, docHeight, removeOnMobile }) => {
 						key={index}
 						useNativeDimensions
 						isPriority={index === 0 || index === 1}
+						sizes="(max-width: 1024px) 100vw, 33vw"
 					/>
 				))}
 			</GalleryColumnInner>

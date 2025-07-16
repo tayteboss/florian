@@ -7,7 +7,7 @@ const MediaStackWrapper = styled.div`
 	overflow: hidden;
 `;
 
-const MediaStack = ({ data, useNativeDimensions, isPriority }) => {
+const MediaStack = ({ data, useNativeDimensions, isPriority, sizes }) => {
 	const useVideo = data?.useVideo && data?.video?.url;
 	const useImage = !data?.useVideo && data?.image;
 
@@ -30,6 +30,7 @@ const MediaStack = ({ data, useNativeDimensions, isPriority }) => {
 					data={data.image}
 					useNativeDimensions={useNativeDimensions}
 					isPriority={isPriority}
+					sizes={sizes}
 				/>
 			)}
 		</MediaStackWrapper>
