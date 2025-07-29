@@ -17,10 +17,7 @@ const MenuContentWrapper = styled(motion.div)`
 	p,
 	a {
 		margin-bottom: 0 !important;
-
-		@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
-			margin-bottom: 8px !important;
-		}
+		margin-bottom: 8px !important;
 	}
 `;
 

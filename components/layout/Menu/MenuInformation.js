@@ -67,18 +67,18 @@ const MenuInformation = ({ options, isOpen }) => (
 							isOpen={isOpen}
 						/>
 						<MenuContent
+							content={options?.siteInformation?.hoursInformation}
+							isOpen={isOpen}
+							delay="300ms"
+							className="end-menu-content"
+						/>
+						<MenuContent
 							content={options?.siteInformation?.addressTitle}
 							link={
 								options?.siteInformation?.addressGoogleMapsLink
 							}
 							isOpen={isOpen}
 							delay="1000ms"
-						/>
-						<MenuContent
-							content={options?.siteInformation?.hoursInformation}
-							isOpen={isOpen}
-							delay="300ms"
-							className="end-menu-content"
 						/>
 						<MenuBooking isOpen={isOpen} />
 					</LayoutGrid>
