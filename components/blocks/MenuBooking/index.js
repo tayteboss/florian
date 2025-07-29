@@ -27,6 +27,12 @@ const Button = styled.a`
 
 	transition: all var(--transition-speed-default) var(--transition-ease);
 
+	@media ${(props) => props.theme.mediaBreakpoints.mobile} {
+		font-size: 12px;
+		line-height: 1;
+		padding: 4px 12px;
+	}
+
 	&:hover {
 		background: var(--colour-yellow);
 		color: var(--colour-blue);
@@ -62,7 +68,7 @@ const MenuBooking = ({ isOpen }) => (
 			href="https://bookings.obeeapp.com/florian?fbclid=PAZXh0bgNhZW0CMTEAAafB_8GmGWv_zgGop3Tcsbnk-dUNjf3dK3i4CGXZKuaPuray1OLd4xOgqxuNVA_aem_L7i6DSxPLqc0xUYRUjnGqw"
 			target="_blank"
 		>
-			Bookings
+			Dinner Bookings
 		</Button>
 	</MenuBookingWrapper>
 );

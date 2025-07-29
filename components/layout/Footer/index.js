@@ -11,6 +11,10 @@ const options = require('../../../json/siteData.json');
 
 const FooterWrapper = styled.footer`
 	min-height: calc(var(--vh) * 50);
+
+	@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+		display: none;
+	}
 `;
 
 const FooterMainWrapper = styled.div`

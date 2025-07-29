@@ -12,6 +12,12 @@ const HomeInfoWrapper = styled.section`
 	left: 0;
 	width: 100%;
 
+	.content {
+			p {
+				margin-bottom: 8px !important;
+			}
+		}
+
 	@media ${(props) => props.theme.mediaBreakpoints.tabletMedium} {
 		.end-home-content {
 			grid-column: span 4;
@@ -35,16 +41,16 @@ const HomeInfo = ({ options }) => {
 			<LayoutWrapper>
 				<LayoutGrid>
 					<FooterContent
-						content={options?.addressTitle}
-						link={options?.addressGoogleMapsLink}
-						inView={inView}
-						delay="1000ms"
-					/>
-					<FooterContent
 						content={options?.hoursInformation}
 						inView={inView}
 						delay="300ms"
 						className="end-home-content"
+					/>
+					<FooterContent
+						content={options?.addressTitle}
+						link={options?.addressGoogleMapsLink}
+						inView={inView}
+						delay="1000ms"
 					/>
 					<FooterContent
 						content={options?.otherInformation}

@@ -367,6 +367,11 @@ const MenuContentWrapper = styled.div`
 	@media ${(props) => props.theme.mediaBreakpoints.tabletMedium} {
 		display: flex;
 	}
+
+	@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+		width: 100%;
+		padding: 0 4px;
+	}
 `;
 
 const Button = styled.a`
@@ -876,7 +881,7 @@ const MenuDeco = ({ isOpen, options }) => (
 						href="https://bookings.obeeapp.com/florian?fbclid=PAZXh0bgNhZW0CMTEAAafB_8GmGWv_zgGop3Tcsbnk-dUNjf3dK3i4CGXZKuaPuray1OLd4xOgqxuNVA_aem_L7i6DSxPLqc0xUYRUjnGqw"
 						target="_blank"
 					>
-						Make a booking
+						Dinner Bookings
 					</Button>
 				</MenuContentWrapper>
 			</MenuDecoWrapper>

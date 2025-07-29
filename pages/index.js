@@ -12,10 +12,10 @@ const PageWrapper = styled.div`
 		width: 100%;
 		overflow: hidden;
 
-		@media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
+		/* @media ${(props) => props.theme.mediaBreakpoints.tabletPortrait} {
 			height: 90vh;
 			height: 90lvh;
-		}
+		} */
 
 		.image-component-wrapper {
 			padding-top: 0;

@@ -64,7 +64,7 @@ const FooterBooking = ({ inView }) => (
 			href="https://bookings.obeeapp.com/florian?fbclid=PAZXh0bgNhZW0CMTEAAafB_8GmGWv_zgGop3Tcsbnk-dUNjf3dK3i4CGXZKuaPuray1OLd4xOgqxuNVA_aem_L7i6DSxPLqc0xUYRUjnGqw"
 			target="_blank"
 		>
-			Make a booking
+			Dinner Bookings
 		</Button>
 	</FooterBookingWrapper>
 );

@@ -11,11 +11,13 @@ const PrimaryButtonWrapper = styled.button`
 
 	transition: all var(--transition-speed-default) var(--transition-ease);
 
-	&:hover {
-		background: ${(props) =>
-			props.isDarkTheme ? 'var(--colour-yellow)' : 'var(--colour-blue)'};
-		color: ${(props) =>
-			props.isDarkTheme ? 'var(--colour-blue)' : 'var(--colour-yellow)'};
+	@media only screen {
+		&:hover {
+			background: ${(props) =>
+				props.isDarkTheme ? 'var(--colour-yellow)' : 'var(--colour-blue)'};
+			color: ${(props) =>
+				props.isDarkTheme ? 'var(--colour-blue)' : 'var(--colour-yellow)'};
+		}
 	}
 `;
 

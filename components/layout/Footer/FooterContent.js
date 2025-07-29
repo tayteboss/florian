@@ -16,7 +16,6 @@ const FooterContentWrapper = styled(motion.div)`
 	a,
 	p {
 		color: var(--colour-yellow) !important;
-		margin-bottom: 0 !important;
 	}
 `;
 
