@@ -64,7 +64,7 @@ const HomeInfo = ({ options }) => {
 						inView={inView}
 						delay="450ms"
 					/> */}
-					{/* <FooterBooking inView={inView} /> */}
+					{options?.showDinnerBookings && <FooterBooking inView={inView} />}
 				</LayoutGrid>
 			</LayoutWrapper>
 		</HomeInfoWrapper>
